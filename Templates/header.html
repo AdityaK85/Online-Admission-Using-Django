@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mundle dharampeht College</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700"
+      rel="stylesheet"
+    />
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %} " />
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %} " />
+    <!-- Ion Icon Fonts-->
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %} " />
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} " />
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %} " />
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %} " />
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %} " />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/owl.theme.default.min.css' %} "
+    />
+
+    <!-- Date Picker -->
+    <link
+      rel="stylesheet"
+      href="{% static 'css/bootstrap-datepicker.css' %} "
+    />
+    <!-- Flaticons  -->
+    <link
+      rel="stylesheet"
+      href="{% static 'fonts/flaticon/font/flaticon.css' %} "
+    />
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %} " />
+
+    <script
+      src="https://kit.fontawesome.com/995f07c2e1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .not-visible {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="colorlib-loader"></div>
+
+    <div id="page">
+      <nav class="colorlib-nav" role="navigation">
+        <div class="sale">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 offset-sm-2 text-center">
+                <div class="row">
+                  <div class="owl-carousel2">
+                    <div class="item">
+                      <div class="col">
+                        <h3>
+                          <a href="#"
+                            >Mundle Dharmapeth Arts & Commerce College
+                          </a>
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="col">
+                        <h3><a href="#">Online Addmission</a></h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container my-3">
+        <nav class="colorlib-nav" role="navigation">
+          <div
+            class="sale"
+            style="background-color: whitesmoke; border-radius: 10px"
+          >
+            <!-- <div class="container"> -->
+            <div class="row">
+              <div class="col-sm-12 offset-sm-0 text-center">
+                <ul class="nav">
+                  <li class="scroll-to-section mx-4">
+                    <label for="" id="personal"
+                      ><i class="fas fa-grin-alt">-1</i></label
+                    >
+                    <a href="/Personal-details" id="personal-1" class="active">
+                      Personal Details
+                    </a>
+                  </li>
+                  <li class="scroll-to-section">
+                    <label for="" id="address"
+                      ><i class="fas fa-grin-alt">-2</i></label
+                    >
+                    <a href="/address-details" id="address-2" class=""
+                      >Address
+                    </a>
+                  </li>
+                  <li class="scroll-to-section">
+                    <label for="" id="education"
+                      ><i class="fas fa-grin-alt">-3</i></label
+                    >
+                    <a href="/education-details" id="education-3" class=""
+                      >Education</a
+                    >
+                  </li>
+                  <li class="scroll-to-section">
+                    <label for="" id="photoSign"
+                      ><i class="fas fa-grin-alt">-4</i></label
+                    >
+                    <a href="/photo-signature" id="photoSign-4" class="mx-2">
+                      Photo Signature
+                    </a>
+                  </li>
+                  <li class="scroll-to-section">
+                    <label for="" id="course"
+                      ><i class="fas fa-grin-alt">-5</i></label
+                    >
+                    <a href="/course-select" id="course-5">Course Selections</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+        </nav>
+      </div>
+
+      <div class="container">
+        <div class="text-right">
+          <label for="" class="btn btn-info">
+            <i class="fas fa-user-check mx-1"></i>Hello, {{username}}</label
+          >
+          <label for="" class="btn btn-info">
+            <a href="/signout" ><i class="fas fa-user-check mx-1"></i>Sign Out</a></label
+          >
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>

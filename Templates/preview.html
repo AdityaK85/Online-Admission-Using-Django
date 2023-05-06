@@ -1,0 +1,316 @@
+{% load static %}
+{% include "header.html" %}
+
+<div class="container my-2">
+  <div id="printableArea">
+    <div class="section-body">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="text-center">
+                MUNDLE DHARMPETH ART & COMMERCE COLLEGE
+              </h4>
+              <h6 class="text-center">NORTH ABHAZARI ROAD, NAGPUR 440010</h6>
+            </div>
+            <div class="card-body">
+              <ul class="list-group">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      For College use only
+                    </li>
+                  </div>
+                  <div class="col-sm-6">
+                    <li class="list-group-item text-dark">
+                      Course Applied for {{sel_course}}
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      College Code : RSM
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      Application No : {{sel_course}}-{{id}}
+                    </li>
+                  </div>
+                  <div class="col-sm-6">
+                    <li class="list-group-item text-dark">
+                      Registration Date : 24/06/2023
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      Registration No : 2406202343
+                    </li>
+                  </div>
+                  <div class="col-sm-12">
+                    <li class="list-group-item text-dark">
+                      <h6>Personal Information Section</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      <h6>Last Name</h6>
+                    </li>
+                    <li class="list-group-item text-dark">
+                      <h6>First Name</h6>
+                    </li>
+                    <li class="list-group-item text-dark">
+                      <h6>Middle Name</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{lname}}</li>
+                    <li class="list-group-item text-dark">{{fname}}</li>
+                    <li class="list-group-item text-dark">{{mname}}</li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">Father's Name</li>
+                    <li class="list-group-item text-dark">Mother's Name</li>
+                    <li class="list-group-item text-dark">Date of Birth</li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{mname}}</li>
+                    <li class="list-group-item text-dark">{{mother_name}}</li>
+                    <li class="list-group-item text-dark">{{dob}}</li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      <h6>Place of Birth :</h6>
+                      {{place_birth}}
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      <h6>Voter Id cord No.</h6>
+                      4332234
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      <h6>Gender</h6>
+                      {{gender}}
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      <h6>Marrital Status</h6>
+                      {{marital_status}}
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark"><h6>Religion</h6></li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{religion}}</li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      <h6>Nationality</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{nationality}}</li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      <h6>Aadhaar Card No.</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{adhaar}}</li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      <h6>Driving Licence No.</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">DL-32328922</li>
+                  </div>
+                  <div class="col-sm-4">
+                    <li class="list-group-item text-dark">
+                      <h6>University Pre Adm Reg No.</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{uni_reg_no}}</li>
+                  </div>
+                  <div class="col-sm-12">
+                    <li class="list-group-item text-dark">
+                      <h6>Address Details Section</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-4">
+                    <li class="list-group-item text-dark">
+                      <h6>Address of Correspondance</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-8">
+                    <li class="list-group-item text-dark">
+                      {{paddress}}
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark"><h6>State</h6></li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{state}}</li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark"><h6>District</h6></li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{district}}</li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark"><h6>Gram Panchayat</h6></li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{gram_p}}</li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark"><h6>Tehsil</h6></li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{tehsil}}</li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark"><h6>City</h6></li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{city}}</li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark"><h6>Pincode</h6></li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{pincode}}</li>
+                  </div>
+                  <div class="col-sm-12">
+                    <li class="list-group-item text-dark">
+                      <h6>Contact Details Section</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      <h6>Student Mobile No.</h6>
+                    </li>
+                    <li class="list-group-item text-dark">
+                      <h6>Alternate Mobile No.</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{mobile}}</li>
+                    <li class="list-group-item text-dark">{{altphone}}</li>
+                  </div>
+                  <div class="col-sm-2">
+                    <li class="list-group-item text-dark">
+                      <h6>Parents No.</h6>
+                    </li>
+                    <li class="list-group-item text-dark">
+                      <h6>Email ID.</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-4">
+                    <li class="list-group-item text-dark">{{gardian_no}}</li>
+                    <li class="list-group-item text-dark">
+                      {{useremail}}
+                    </li>
+                  </div>
+                  <div class="col-sm-12">
+                    <li class="list-group-item text-dark">
+                      <h6>Legal Reservation Information Section</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      <h6>Caste Category</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{caste_category}}</li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">
+                      <h6>Sub Caste</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-3">
+                    <li class="list-group-item text-dark">{{subcast}}</li>
+                  </div>
+                  <div class="col-sm-12">
+                    <li class="list-group-item">
+                      <h6>Education Details Section</h6>
+                    </li>
+                  </div>
+                  <div class="col-sm-12">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">Name of Examination</th>
+                          <th scope="col">Name of Board</th>
+                          <th scope="col">Name of School/Colleg</th>
+                          <th scope="col">Date of Passing</th>
+                          <th scope="col">Examination Seat No.</th>
+                          <th scope="col">Passing certificate No.</th>
+                          <th scope="col">Grade/Total Marks</th>
+                          <th scope="col">Obt.No</th>
+                          <th scope="col">Perc %</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">{{exam_name}}</th>
+                          <th>
+                            Maharastra State of board secondry and higher
+                            secondry Education
+                          </th>
+                          <th>Late Devkibai bang</th>
+                          <th>{{dop}}</th>
+                          <th>N899393</th>
+                          <th>232334</th>
+                          <th>{{total_mark}}</th>
+                          <th>{{op_mark}}</th>
+                          <th>{{perc}}</th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-right my-5">
+    <a href="/signout" class="btn rounded-0 btn-success ">Back</a>
+  <button type="button" onclick="printPageArea('printableArea')"  class="btn rounded-0 btn-warning ">
+    Print
+  </button>
+</div>
+</div>
+
+
+
+<script>
+  function printPageArea(areaID){
+    var printContent = document.getElementById(areaID).innerHTML;
+    var originalContent = document.body.innerHTML;
+    document.body.innerHTML = printContent;
+    window.print();
+    document.body.innerHTML = originalContent;
+  }
+
+  
+  function go_home(){
+    location.herf = '/signout'
+  }
+  
+  </script>
+  {% include "footer.html" %}

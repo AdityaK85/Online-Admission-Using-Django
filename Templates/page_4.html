@@ -1,0 +1,135 @@
+{% load static %} {% include 'header.html' %}
+
+<style>
+  img {
+    max-width: 180px;
+  }
+  input[type="file"] {
+    padding: 10px;
+    background: #2d2d2d;
+  }
+</style>
+
+<!-- <link rel="stylesheet" href="{% static 'assets/css/style.css' %} " /> -->
+<!-- <link rel="stylesheet" href="{% static 'assets/css/components.css' %} " /> -->
+
+<div class="container" id="page-4">
+  <form
+    action="/submit_photo_signature/"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <div class="row">
+      <div class="col-6">
+        <div class="card">
+          <div class="card-header">
+            {% if msg %}
+            <script>
+              alert(
+                "You do not edit your application ! Becouse you already submitted"
+              );
+              location.href = "/preview";
+            </script>
+            {% endif %}
+            <h4>Student Photo</h4>
+          </div>
+          <div class="card-body">
+            <center>
+              <div class="fallback my-4">
+                <label for="stu_photo" class="btn btn-success"
+                  >Select Photo</label
+                ><br />
+                <input
+                  type="file"
+                  name="stu_photo"
+                  id="stu_photo"
+                  onchange="readURL(this);"
+                />
+                <img
+                  id="blah"
+                  class="my-4"
+                  src="http://placehold.it/180"
+                  alt="your image"
+                />
+              </div>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card">
+          <div class="card-header">
+            <h4>Student Signature</h4>
+          </div>
+          <div class="card-body">
+            <center>
+              <div class="fallback my-4">
+                <label for="stu_signature" class="btn btn-success"
+                  >Select Signature</label
+                ><br />
+                <input
+                  type="file"
+                  id="stu_signature"
+                  name="stu_signature"
+                  class="my-4"
+                  onchange="readsign(this);"
+                />
+                <img
+                  id="sel_stu_sign"
+                  class="my-4"
+                  src="http://placehold.it/180"
+                  alt="your image"
+                />
+              </div>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-right my-4">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <input
+            type="submit"
+            id="save-4"
+            value="Save & Next"
+            class="btn btn-primary"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script src="{% static 'assets/bundles/dropzonejs/min/dropzone.min.js' %} "></script>
+
+<script>
+  $("#stu_signature").hide();
+  $("#stu_photo").hide();
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $("#blah").attr("src", e.target.result);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function readsign(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $("#sel_stu_sign").attr("src", e.target.result);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+
+{% include 'footer.html' %}

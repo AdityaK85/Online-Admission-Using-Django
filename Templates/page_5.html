@@ -1,0 +1,159 @@
+{% load static %} {% include 'header.html' %}
+
+<!-- <div id="colorlib-contact"> -->
+<div class="container" id="page-5">
+  <div class="row">
+    <div class="col">
+      <div class="contact-wrap">
+        {% if msg %}
+        <script>
+          alert("You do not edit your application ! Becouse you already submitted")
+          location.href = '/preview'
+        </script>
+        {% endif %}
+        <h3>Course Selection</h3>
+        <h6 style="color: red">
+          Please let the page load completely, before proceeding with course
+          selection.
+        </h6>
+        <form action="#" class="contact-form">
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="examlevel">Course</label>
+                <select class="form-control" name="sel_course" id="sel_course">
+                  <option value="">--select--</option>
+                  <option value="sel_course">{{sel_course}}</option>
+                  <option value="HSC">HSC</option>
+                  <option value="B.COM-I">B.COM-I</option>
+                  <option value="B.COM-II">B.COM-II</option>
+                  <option value="BA-II">BA-II</option>
+                  <option value="BCCA-II">BCCA-II</option>
+                  <option value="BBA-II">BBA-II</option>
+                  <option value="B.COM-III">B.COM-III</option>
+                  <option value="BA-III">BA-III</option>
+                  <option value="BCCA-III">BCCA-III</option>
+                  <option value="BBA-III">BBA-III</option>
+                  <option value="OTHER">OTHER</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="col-sm-12 my-2">
+              <div class="form-group">
+                <input
+                  type="button"
+                  onclick="course()"
+                  value="Save & Next"
+                  class="btn btn-primary"
+                />
+              </div>
+            </div>
+
+            <div class="w-100"></div>
+            <table class="table table-sm my-3">
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">Course</th>
+                  <th scope="col">Application No</th>
+                  <th scope="col">Application Status</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>{{sel_course}}</td>
+                  <td>{{sel_course}}-{{id}}</td>
+                  {% if application_status %}
+                  <td>CONFIRM</td>
+                  {% else %}
+                  <td id="status">NOT-CONFIRM</td>
+                  {% endif %}
+                  <td>
+                    <button
+                      id="full_proceed"
+                      onclick="confirm_process()"
+                      class="btn btn-warning"
+                    >
+                      Proceed
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <input
+              type="hidden"
+              name="application_status"
+              id="application_status"
+              value="{{application_status}}"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+
+<script>
+  // $("#full_proceed").click(function(){
+  //   conf_status = document.getElementById('status').innerHTML = "CONFIRM"
+  //   if(conf_status == true){
+  //     $("#application_status").val(conf_status)
+  //     conf_value = $("#application_status").val(conf_status)
+  //     $("#status").val(conf_value)
+  //   }
+  //   else if($('#applications_status'== 'None')){
+  //     alert('Confirm your applications to proceeds')
+  //     $("#application_status").val(conf_status)
+  //     conf_value = $("#application_status").val(conf_status)
+  //     $("#status").val(conf_value)
+  //   }
+  // })
+
+  function confirm_process() {
+    alert('Thank for joining Us ! After application submited will not be Edited ! Thanks You')
+    application_status = $("#application_status").val();
+    if (application_status == false) {
+      alert("Confirm your application to proceeds ");
+    } else {
+      console.log(application_status);
+      $.ajax({
+        method: "POST",
+        url: "/confirm/",
+        data: {
+          application_status: application_status,
+        },
+        success: function (response) {
+          location.href = "/preview/";
+        },
+      });
+    }
+  }
+
+  function course() {
+    sel_course = $("#sel_course").val();
+
+    $.ajax({
+      method: "POST",
+      url: "/select_course/",
+      data: {
+        sel_course: sel_course,
+      },
+      success: function (response) {
+        if (response == "success") {
+          alert("course added");
+          location.reload();
+        } else {
+          alert("error");
+        }
+      },
+    });
+  }
+</script>
+
+{% include 'footer.html' %}

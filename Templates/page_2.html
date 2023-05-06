@@ -1,0 +1,190 @@
+{% load static %} {% include 'header.html' %}
+<!-- <div id="colorlib-contact"> -->
+<div class="container" id="page-2">
+  <div class="row">
+    <div class="col">
+      <div class="contact-wrap">
+        {% comment %} {% for message in messages %}
+        <h5 style="color: darkslategray" {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }}></h5>
+        {% endfor %} {% endcomment %}
+        {% if msg %}
+        <script>
+          alert("You do not edit your application ! Becouse you already submitted")
+          location.href = '/preview'
+        </script>
+        {% endif %}
+        <h3>Address</h3>
+        <form action="#" class="contact-form">
+          <h5 style="color: darkslategray">Residence / Permanent Address</h5>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="h_no">House No.</label>
+                <input type="text" id="h_no" name="h_no" value="{{h_no}}" class="form-control"
+                  placeholder="Your House No." />
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="paddress">Permanent Address</label>
+                <input type="text" id="paddress" name="paddress" value="{{paddress}}" class="form-control"
+                  placeholder="YourPermanent Address" />
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="country">Country </label>
+                <select class="form-control" name="country" id="country">
+                  <option value="{{country}}">{{country}}</option>
+                  <option value="India">India</option>
+                  <option value="Pakistan">Pakistan</option>
+                  <option value="Butan">Butan</option>
+                  <option value="Gujrat">Gujrat</option>
+                  <option value="Banglore">Banglore</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="state">State</label>
+                <select class="form-control" name="state" id="state">
+                  <option value="{{state}}">{{state}}</option>
+                  <option value="Maharastra">Maharastra</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Kerla">Kerla</option>
+                  <option value="Lakshdip">Lakshdip</option>
+                  <option value="Kashmir">Kashmir</option>
+                  <option value="Uttarchal">Uttarchal</option>
+                  <option value="Uttar pradesh">Uttar pradesh</option>
+                  <option value="West Bengal">West Bengal</option>
+                  <option value="Tripuda">Tripuda</option>
+                  <option value="Orrisa">Orrisa</option>
+                  <option value="Panjab">Panjab</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="district">District </label>
+                <select class="form-control" name="district" id="district">
+                  <option value="{{district}}">{{district}}</option>
+                  <option value="NAGPUR">NAGPUR</option>
+                  <option value="NAGPUUR">NAGPUUR</option>
+                  <option value="MUMBAI-CITY">MUMBAI-CITY</option>
+                  <option value="DELHI">DELHI</option>
+                  <option value="AMARAVATI">AMARAVATI</option>
+                  <option value="AKOLA">AKOLA</option>
+                  <option value="HINGNA">HINGNA</option>
+                  <option value="HINGOLI">HINGOLI</option>
+                  <option value="LATUR">LATUR</option>
+                  <option value="WALNI">WALNI</option>
+                  <option value="WARDHA">WARDHA</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="city">City/Village</label>
+                <select class="form-control" name="city" id="city">
+                  <option value="{{city}}">{{city}}</option>
+                  <option value="AKOLA">AKOLA</option>
+                  <option value="ARVI">ARVI</option>
+                  <option value="BHANDARA">BHANDARA</option>
+                  <option value="BORGAON">BORGAON</option>
+                  <option value="AMARAVATI">AMARAVATI</option>
+                  <option value="DHABA">DHABA</option>
+                  <option value="YAVATMAL">YAVATMAL</option>
+                  <option value="WADI">WADI</option>
+                  <option value="WADI-NAGPUR">WADI-NAGPUR</option>
+                  <option value="SAONER">SAONER</option>
+                  <option value="MOUDA">MOUDA</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="tehsil">Tehsil</label>
+                <input type="text" id="tehsil" name="tehsil" value="{{tehsil}}" class="form-control"
+                  placeholder="Your tehsil" />
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="gram_p">Gram Panchayat</label>
+                <input type="text" id="gram_p" name="gram_p" value="{{gram_p}}" class="form-control"
+                  placeholder="Your Gram Panchayat" />
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="pincode">PIN Code</label>
+                <input type="text" id="pincode" name="pincode" value="{{pincode}}" class="form-control"
+                  placeholder="Your Pin Code" />
+              </div>
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <input type="button" id="save-2" onclick="submit_address()" value="Save & Next"
+                  class="btn btn-primary" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- </div> -->
+
+
+<script>
+
+  function submit_address() {
+    h_no = $('#h_no').val()
+    paddress = $('#paddress').val()
+    country = $('#country').val()
+    state = $('#state').val()
+    district = $('#district').val()
+    city = $('#city').val()
+    tehsil = $('#tehsil').val()
+    gram_p = $('#gram_p').val()
+    pincode = $('#pincode').val()
+
+    $.ajax({
+      method: "POST",
+      url: "/submit_address/",
+      data: {
+        h_no,
+        paddress,
+        country,
+        state,
+        district,
+        city,
+        tehsil,
+        gram_p,
+        pincode
+      },
+      success: function (response) {
+        if (response == "success") {
+          location.href = "/education-details"
+        } else {
+          alert("error")
+        }
+      }
+    });
+  }
+
+
+</script>
+
+{% include 'footer.html' %}

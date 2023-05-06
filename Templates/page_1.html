@@ -1,0 +1,614 @@
+{% load static %} {% include 'header.html' %}
+
+<script src="{% static 'assets/bundles/dropzonejs/min/dropzone.min.js' %} "></script>
+
+<!-- <div id="colorlib-contact"> -->
+<div class="container my-1" id="page-1">
+  <div class="row">
+    <div class="col">
+      <div class="contact-wrap">
+        {% if msg %}
+        <script>
+          alert("You do not edit your application ! Becouse you already submitted")
+          location.href = '/preview'
+        </script>
+        {% endif %}
+        <h3>Personal Details</h3>
+        <form action="/submitForm/" method="post" enctype="multipart/form-data" id="uploadPhoto" class="contact-form">
+          <h5 style="color: darkslategray">Student Personal Section</h5>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <select class="form-control" name="title" id="title">
+                  <option value="{{title}}">{{title}}</option>
+                  <option value="Ku">KU</option>
+                  <option value="Mrs">Mrs.</option>
+                </select>
+                <!-- <input type="text" id="title" class="form-control" placeholder="Your firstname"> -->
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="lname">Last Name/Surname</label>
+                <input type="text" id="lname" name="lname" class="form-control" value="{{lname}}"
+                  placeholder="Your lastname" />
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" value="{{fname}}" class="form-control"
+                  placeholder="Your First Name" />
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="mname">Middle Name</label>
+                <input type="text" id="mname" name="mname" value="{{mname}}" class="form-control"
+                  placeholder="Your Middle Name" />
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="mobile">Mobile</label>
+                <input type="text" id="mobile" mobile="mobile" maxlength="10" pattern="[0-9]{10}" class="form-control"
+                  value="{{mobile}}" placeholder="Your Mobile Number" />
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="altphone">Phone/Alternate No./Whatsapp</label>
+                <input type="text" id="altphone" name="altphone" maxlength="10" pattern="[0-9]{10}" class="form-control"
+                  value="{{altphone}}" placeholder="Your lastname" />
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="email">Email Id</label>
+                <input type="email" id="useremail" name="useremail" class="form-control" value="{{useremail}}"
+                  placeholder="Your Email Id" />
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="marital">Marital Status</label>
+                <select class="form-control" name="marital_status" id="marital_status" value="{{marital_status}}">
+                  <option value="UnMarried">UnMarried</option>
+                  <option value="Married">Married</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="bloodG">Blood Group</label>
+                <select class="form-control" name="blood" id="blood">
+                  <option value="{{blood}}">{{blood}}</option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B-">B-</option>
+                  <option value="B+">B+</option>
+                  <option value="C+">C+</option>
+                  <option value="C-">C-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" name="gender" id="gender">
+                  <option value="{{gender}}">{{gender}}</option>
+                  <option value="Female">Female</option>
+                  <option value="Male ">Male</option>
+                </select>
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="dob">Date of birth as per Leaving</label>
+                <input type="date" id="dob" name="dob" value="{{dob|date:'Y-m-d'}}" class="form-control"
+                  placeholder="Your date of birth" />
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="motherTougue">Mother tougue</label>
+                <select class="form-control" id="mother_tougue" name="mother_tougue">
+                  <option value="{{mother_tougue}}">{{mother_name}}</option>
+                  <option value="Marathi">Marathi</option>
+                  <option value="Hindi">Hindi</option>
+                  <option value="English">English</option>
+                  <option value="Urdu">Urdu</option>
+                  <option value="Panjabi">Panjabi</option>
+                  <option value="Chainess">Chainess</option>
+                  <option value="Japaness">Japaness</option>
+                  <option value="Bihari">Bihari</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="birthPlace">Birth Place</label>
+                <input type="text" id="place_birth" name="place_birth" value="{{place_birth}}" class="form-control"
+                  placeholder="Your Birth Place" />
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="birth_state">Birth/Domacile state</label>
+                <select class="form-control" name="birth_state" id="birth_state" value="{{birth_state}}">
+                  <option value="{{birth_state}}">{{birth_state}}</option>
+                  <option value="Maharstra">Maharstra</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Haydrabad">Haydrabad</option>
+                  <option value="Kampur">Kampur</option>
+                  <option value="Banglore">Banglore</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="nationality">Nationality </label>
+                <select class="form-control" name="nationality" id="nationality" value="{{nationality}}">
+                  <option value="Indian">Indian</option>
+                  <option value="Pakistan">Pakistan</option>
+                  <option value="America">America</option>
+                  <option value="Africa">Africa</option>
+                  <option value="Indonesia">Indonesia</option>
+                  <option value="Japan">Japan</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="cast">Caste Category</label>
+                <select class="form-control" name="caste_category" id="caste_category" value="">
+                  <option value="{{caste_category}}">{{caste_category}}</option>
+                  <option value="">Please Select</option>
+                  <option value="OBC">OBC</option>
+                  <option value="SC">SC</option>
+                  <option value="OPEN">OPEN</option>
+                  <option value="NT-A">NT-A</option>
+                  <option value="NT-B">NT-B</option>
+                  <option value="NT-C">NT-C</option>
+                  <option value="NT-D">NT-D</option>
+                  <option value="SBC">SBC</option>
+                  <option value="EWS">EWS</option>
+                  <option value="VJ">VJ</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="religion">Religion</label>
+                <select class="form-control" name="religion" id="religion">
+                  <option value="{{religion}}">{{religion}}</option>
+                  <option value="Hindu">Hindu</option>
+                  <option value="Muslim">Muslim</option>
+                  <option value="Musalman">Musalman</option>
+                  <option value="Braman">Braman</option>
+                  <option value="Bramin">Bramin</option>
+                  <option value="Buddiest">Buddiest</option>
+                  <option value="Budha">Budha</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="schoolarship">You want to Avail Schoolarship </label><input type="hidden"
+                  name="schoolarship" id="schoolarship" />
+                <div class="row">
+                  <input type="radio" name="schoolar" class="col-sm-1 mx-2"  value="Yes" /> Yes <input type="radio" name="schoolar"  class="col-sm-1 mx-2"
+                    value="No" /> No
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="subcaste">Sub Caste</label>
+                <select class="form-control" name="subcast" id="subcast">
+                  <option value="{{subcast}}">{{subcast}}</option>
+                  <option value="Kumbi">Kumbi</option>
+                  <option value="Kumbhar">Kumbhar</option>
+                  <option value="Teli">Teli</option>
+                  <option value="Sutar">Sutar</option>
+                  <option value="Lad">Lad</option>
+                  <option value="Bhat">Bhat</option>
+                  <option value="Kirat">Kirat</option>
+                </select>
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="bankname">Bank Name</label>
+                <input type="text" id="bank_name" name="bank_name" class="form-control" value="{{bank_name}}"
+                  placeholder="Your Bank Name" />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="acNo">Account No.</label>
+                <input type="text" id="acno" name="acno" maxlength="14" value="{{acno}}" class="form-control"
+                  placeholder="Your Account No." />
+              </div>
+            </div>
+
+            <div class="w-100"></div>
+            <h5 style="color: darkslategray">Parent Information</h5>
+            <div class="w-100 my-2"></div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="fatherName">Father Name</label>
+                <input type="text" id="father_name" name="father_name" class="form-control" value="{{father_name}"
+                  placeholder="Your Father Name" />
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="father_occupation">Father Occupation</label>
+                <select class="form-control" name="father_occupation" id="father_occupation">
+                  <option value="{{father_occupation}}">
+                    {{father_occupation}}
+                  </option>
+                  <option value="No work">No work</option>
+                  <option value="Bussines">Bussines</option>
+                  <option value="Employee">Employee</option>
+                  <option value="Farmer">Farmer</option>
+                  <option value="Painter">Painter</option>
+                  <option value="Electrician">Electrician</option>
+                  <option value="Doctor">Doctor</option>
+                  <option value="Engineer">Engineer</option>
+                  <option value="Death">Death</option>
+                  <option value="Civil">Civil</option>
+                  <option value="Govt.Service">Govt.Service</option>
+                </select>
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="mother_name">Mother First Name</label>
+                <input type="text" id="mother_name" name="mother_name" class="form-control" value="{{mother_name}}"
+                  placeholder="Your Mother Name" />
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="phoneNo">Guardian's/Parent's/Contact</label>
+                <input type="text" id="gardian_no" name="gardian_no" class="form-control" maxlength="10"
+                  pattern="[0-9]{10}" value="{{gardian_no}}" placeholder="Your Phone No." />
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="father_first_name">Father First Name</label>
+                <input type="text" id="father_first_name" name="father_first_name" class="form-control"
+                  value="{{father_first_name}}" placeholder="Your Father name" />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="fatherMiddleName">Father Middle Name</label>
+                <input type="text" id="father_middle_name" name="father_middle_name" class="form-control"
+                  value="{{father_middle_name}}" placeholder="Your GradFather name" />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="father_last_name">Father Last Name</label>
+                <input type="text" id="father_last_name" name="father_last_name" class="form-control"
+                  value="{{father_last_name}}" placeholder="Your Father last name" />
+              </div>
+            </div>
+
+            <div class="w-100"></div>
+            <h5 style="color: darkslategray">Other Information</h5>
+            <div class="w-100 my-2"></div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="is_diff_abled"></label>
+                <div class="row">
+                  <input type="checkbox" id="is_diff_abled" name="is_diff_abled" class="col-sm-1 mx-2"
+                    value="{{is_diff_abled}}" />Is Differently Abled?
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="adhaar">Aadhaar No</label>
+                <input type="text" id="adhaar" name="adhaar" maxlength="12" class="form-control" value="{{adhaar}}"
+                  placeholder="Your Adhaar No." />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="adhaar_link"></label>
+                <div class="row">
+                  <input type="checkbox" id="adhaar_link" name="adhaar_link" value="{{adhaar_link}}"
+                    class="col-sm-1 mx-2" />Aadhaar Linked to Bank
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="IDProof">ID Proof</label>
+                <select class="form-control" name="id_proof" id="id_proof">
+                  <option value="{{id_proof}}">{{id_proof}}</option>
+                  <option value="">Please Select</option>
+                  <option value="Adhaar Card">Adhaar Card</option>
+                  <option value="Pan Card">Pan Card</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="abled"></label>
+                <div class="row">
+                  <input type="checkbox" name="sport_person" id="sport_person" value="{{sport_person}}"
+                    class="col-sm-1 mx-2" />Are you a sports person?
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="ncc "></label>
+                <div class="row">
+                  <input type="checkbox" id="ncc" name="ncc" class="col-sm-1 mx-2" />Interested In NCC/NSS?
+                </div>
+              </div>
+            </div>
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="uni_reg_no">University Pre Reg. No.</label>
+                <input type="text" id="uni_reg_no" name="uni_reg_no" class="form-control" value="{{uni_reg_no}}"
+                  maxlength="13" placeholder="University Registration Number" />
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="medium">Medium Of Instruction</label>
+                <select class="form-control" name="medium_of_instru" id="medium_of_instru">
+                  <option value="{{medium_of_instru}}">
+                    {{medium_of_instru}}
+                  </option>
+                  <option value="">Please Select</option>
+                  <option value="English">English</option>
+                  <option value="Hindi">Hindi</option>
+                  <option value="Marathi">Marathi</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="resver">Social Reservation</label>
+                <select class="form-control" name="social_res" id="social_res">
+                  <option value="{{social_res}}">{{social_res}}</option>
+                  <option value="">Please Select</option>
+                  <option value="EX-ServiceMan/Ward of Service Man">
+                    EX-ServiceMan/Ward of Service Man
+                  </option>
+                  <option value="Active-ServiceMan/Ward of Service Man">
+                    Active-ServiceMan/Ward of Service Man
+                  </option>
+                  <option value="Freedom Fighter/Ward of Service Man">
+                    Freedom Fighter/Ward of Service Man
+                  </option>
+                  <option value="Ward of Primary Teacher">
+                    Ward of Primary Teacher
+                  </option>
+                  <option value="Ward of Secondry Teacher">
+                    Ward of Secondry Teacher
+                  </option>
+                  <option value="Member of project affected Family">
+                    Member of project affected Family
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="w-100"></div> -->
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="full_nominee">Nominee Name</label>
+                <input type="text" id="full_nominee" name="full_nominee" class="form-control" value="{{full_nominee}}"
+                  placeholder="Your Nominee Name" />
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="nominee_relation">Nominee Relation With Student</label>
+                <input type="text" id="nominee_relation" name="nominee_relation" class="form-control"
+                  value="{{nominee_relation}}" placeholder="Your Nominee Relation" />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="nominee_dob">Nominee Date Of Birth</label>
+                <input type="date" id="nominee_dob" name="nominee_dob" value="{{nominee_dob}}" class="form-control"
+                  placeholder="Your Nominee DOB" />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="nominee_mobile_no">Nominee Mobile No.</label>
+                <input type="text" id="nominee_mobile_no" name="nominee_mobile_no" class="form-control" maxlength="10"
+                  value="{{nominee_mobile_no}}" pattern="[0-9]{10}" placeholder="Your Nominee No." />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="nominee_age">Nominee Age</label>
+                <input type="number" id="nominee_age" name="nominee_age" value="{{nominee_age}}" class="form-control"
+                  placeholder="Your Nominee AGE" />
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="nominee_adhar_no">Nominee Adhaar No.</label>
+                <input type="text" id="nominee_adhar_no" name="nominee_adhar_no" class="form-control"
+                  value="{{nominee_adhar_no}}" maxlength="12" pattern="[0-11]{12}" placeholder="Your Nominee Adhaar" />
+              </div>
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <input type="button" id="save" onclick="submit_personal_details()" value="Save & Next"
+                  class="btn btn-primary" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+  crossorigin="anonymous"></script>
+
+<script>
+  function submit_personal_details() {
+    title = $("#title").val();
+    lname = $("#lname").val();
+    fname = $("#fname").val();
+    mname = $("#mname").val();
+    mobile = $("#mobile").val();
+    altphone = $("#altphone").val();
+    marital_status = $("#marital_status").val();
+    blood = $("#blood").val();
+    gender = $("#gender").val();
+    dob = $("#dob").val();
+    mother_tougue = $("#mother_tougue").val();
+    place_birth = $("#place_birth").val();
+    birth_state = $("#birth_state").val();
+    nationality = $("#nationality").val();
+    caste_category = $("#caste_category").val();
+    religion = $("#religion").val();
+    schoolarship = $("#schoolarship").val();
+    subcast = $("#subcast").val();
+    bank_name = $("#bank_name").val();
+    acno = $("#acno").val();
+    father_name = $("#father_name").val();
+    father_occupation = $("#father_occupation").val();
+    mother_name = $("#mother_name").val();
+    gardian_no = $("#gardian_no").val();
+    father_first_name = $("#father_first_name").val();
+    father_middle_name = $("#father_middle_name").val();
+    father_last_name = $("#father_last_name").val();
+    is_diff_abled = $("#is_diff_abled").val();
+    adhaar = $("#adhaar").val();
+    adhaar_link = $("#adhaar_link").val();
+    id_proof = $("#id_proof").val();
+    sport_person = $("#sport_person").val();
+    ncc = $("#ncc").val();
+    uni_reg_no = $("#uni_reg_no").val();
+    medium_of_instru = $("#medium_of_instru").val();
+    social_res = $("#social_res").val();
+    full_nominee = $("#full_nominee").val();
+    nominee_relation = $("#nominee_relation").val();
+    nominee_dob = $("#nominee_dob").val();
+    nominee_age = $("#nominee_age").val();
+    nominee_mobile_no = $("#nominee_mobile_no").val();
+    nominee_adhar_no = $("#nominee_adhar_no").val();
+
+    $.ajax({
+      method: "POST",
+      url: "/submit_personal/",
+      data: {
+        title,
+        lname,
+        fname,
+        mname,
+        mobile,
+        altphone,
+        marital_status,
+        blood,
+        gender,
+        dob,
+        mother_tougue,
+        place_birth,
+        birth_state,
+        nationality,
+        caste_category,
+        religion,
+        schoolarship,
+        subcast,
+        bank_name,
+        acno,
+        father_name,
+        father_occupation,
+        mother_name,
+        gardian_no,
+        father_first_name,
+        father_middle_name,
+        father_last_name,
+        is_diff_abled,
+        adhaar,
+        adhaar_link,
+        id_proof,
+        sport_person,
+        ncc,
+        uni_reg_no,
+        medium_of_instru,
+        social_res,
+        full_nominee,
+        nominee_relation,
+        nominee_dob,
+        nominee_age,
+        nominee_mobile_no,
+        nominee_adhar_no,
+      },
+      success: function (response) {
+        if (response == "success") {
+          location.href = "/address-details";
+        } else {
+          alert("error");
+        }
+      },
+    });
+  }
+
+  const radio_btn = document.getElementById("save");
+  const radio_button = document.querySelectorAll('input[name="schoolar"]');
+  radio_btn.addEventListener("click", () => {
+    let selectMethod;
+    for (const radio_buttons of radio_button) {
+      if (radio_buttons.checked) {
+        selectMethod = radio_buttons.value;
+        break;
+      }
+    }
+    $("#schoolarship").val(selectMethod);
+  });
+
+
+</script>
+
+{% include 'footer.html' %}
