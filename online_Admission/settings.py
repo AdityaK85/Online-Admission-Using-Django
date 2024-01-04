@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1oe0y_^fam9#+9e%u-vqwgk#^)$(2ofpn0@7z1xc8=7+q0zdgt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'online_Admission.urls'
@@ -128,13 +129,14 @@ EMAIL_USE_TLS = True
 
 EMAIL_HOST_PASSWORD = 'kzqclelauwtmnept'
 
-
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = 'static/'
 STATIC_DIRS = (os.path.join(BASE_DIR, '/static'),)
+STATIC_ROOT = os.path.join(BASE_DIR,'/static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
